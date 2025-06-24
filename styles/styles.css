@@ -251,6 +251,7 @@
         
         .hero-btn {
             background: #FF9800;
+            text-decoration: none;
             color: white;
             border: none;
             padding: 15px 40px;
