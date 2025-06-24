@@ -1,27 +1,22 @@
 .swiper {
-  width: 90%;
-    width: 100vw; /* 100% ширины окна */
-  height: 300px;
+  width: 100%;
+  height: 60vw; /* высота адаптивна от ширины */
+  max-height: 400px;
   margin: auto;
   position: relative;
   background-color: #fff;
 }
 
 .swiper-wrapper {
-  display: flex;
-  height: 100%; /* важно */
+  height: 100%;
 }
 
 .swiper-slide {
-  width: 100%;
-  height: 100%; /* важно */
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0; /* убрать отступы */
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -29,18 +24,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block; /* убрать лишние отступы от inline-элементов */
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
+/* Кнопки навигации */
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #1e2024;
+  background-color: rgba(30, 32, 36, 0.9);
   width: 40px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 6px;
   color: white;
   z-index: 10;
   display: flex;
@@ -55,4 +53,26 @@
 
 .swiper-button-next {
   right: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .swiper {
+    height: 50vw;
+    max-height: 300px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper {
+    height: 45vw;
+    max-height: 250px;
+  }
 }
